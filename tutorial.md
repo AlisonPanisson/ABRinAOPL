@@ -1,6 +1,7 @@
 # Tutorial
 
-This tutorial is based on Jason Eclipse Plugin. 
+This tutorial is based on JaCaMo Eclipse Plugin. More information about JaCaMo is available [here](http://jacamo.sourceforge.net/).
+Also, you need to be familiar with [Jason](http://jason.sourceforge.net/wp/) agent-oriented programming language.
 
 ## Installing JaCaMo Eclipse Plugin
 - [Install Eclipse IDE](https://www.eclipse.org/downloads/)
