@@ -69,10 +69,10 @@ good(paper_45).
 held_in(bracis,recife).
 ```
 
-An agent is able to make a decision about buying a ticket to `recife` if it is able to construct an acceptable argument to go to `recife`. Considering the knowledge above, the agent does have an argument for that, and it can buy the ticket using the following plan: 
+An agent is able to make a decision about requesting a ticket to `recife` if it is able to construct an acceptable argument to go to `recife`. Considering the knowledge above, the agent does have an argument for that, and it can request the ticket using the following plan: 
 
 ```javascript
-+!buyTicket(L):- argument(go_to(L),Arg) <- buyTicket(L).
++!buyTicket(L):- argument(go_to(L),Arg) <- request_ticket(L).
 ```
 
 However, imagine that the agent has checked the BRACIS web page and realised that the page limit for BRACIS papers is 6 pages and the agent has, unfortunatelly, submitted a longer paper than allowed, and longer paper are *strictly* not accepted:
@@ -84,6 +84,6 @@ paper_length(paper_45,9).
 allowed_length(bracis,6).
 ```
 
-With this new information the agent is not able to construct an argument to `go_to(recife)`, thus it is not able to buy the ticket. 
+With this new information the agent is not able to construct an argument to `go_to(recife)`, thus it is not able to request the ticket. 
 
 > **Note:** Our paper had the correct lenght and it has been accepted to BRACIS that year, and it is available [here](https://www.computer.org/csdl/proceedings/bracis/2016/3566/00/07839555.pdf)
