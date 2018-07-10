@@ -17,8 +17,7 @@ This tutorial is based on Jason Eclipse Plugin.
 ```javascript
 { include("reasoning/ABRinAOPL.asl") }
 ```
-
-- You are already able to implement argumentation-based agents!
+- You are already able to implement argumentation-based agents. You only need to use the predicate `argument(I)` or `argument(I,Arg)` in order to make agents to query the argumentation-based reasoning mechanism as they usually query their beliefs bases. `argument(I)` returns `true` when the agent has an acceptable argument supporting the information unified in `I`, and `false` otherwise. `argument(I,Arg)` also returns, unified in `Arg`, the beliefs and inferences rules that support that information.
 
 ## Knowledge representation
 
