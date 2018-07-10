@@ -43,15 +43,46 @@ One of the most famous examples of defeasible reasoning is the so-called Tweety 
 We are able to represente such defeasible infereces as follows:
 
 ```javascript
-defeasible_inf(flies(A),bird(A))
-defeasible_inf(~flies(A),penguin(A))
-strict_inf(bird(A),penguin(A))
-penguin(tweety)
+defeasible_inf(flies(A),bird(A)).
+defeasible_inf(~flies(A),penguin(A)).
+strict_inf(bird(A),penguin(A)).
+penguin(tweety).
 ```
 Now, imagine that an agent needs to decide between to leave a bird in a tree or in the ground, and that decision is based on the capability of such a bird to fly:
 
 ```javascript
-+!leave_bird(A): argument(flies(A)) <-leave_at_tree(A)
-+!leave_bird(A): argument(~flies(A)) <- leave_at_ground(A)
++!leave_bird(A): argument(flies(A)) <- leave_at_tree(A).
++!leave_bird(A): argument(~flies(A)) <- leave_at_ground(A).
 ```
 In our example, the agent has only an acceptable argument to `~flies(tweety)`, thus, when making such decision, `tweety` is going to be leaved at the ground. 
+
+### The Paper Submission Example
+
+We have published an example in which a student (me in that time) was writing a paper to a conference called BRACIS (Brazilian Conference on Intelligent Systems), and the student believed that their paper was good. When someone beliefs that their paper is good and they have submitted that paper for a particular conference, they can concluse (in a defeasible way, of course) that the paper is going to be accepted to that conference. With a accepted paper, the student can conclude that they need to go to the conference. This knowledge is represented as follows:
+
+```javascript
+defeasible_inf(go_to(L),[held_in(C,L),accepted(P,C)]).
+defeasible_inf(accepted(P,C),[submitted(P,C),good(P)]).
+submitted(paper_45,bracis).
+good(paper_45).
+held_in(bracis,recife).
+```
+
+An agent is able to make a decision about buying a ticket to `recife` if it is able to construct an acceptable argument to go to `recife`. Considering the knowledge above, the agent does have an argument for that, and it can buy the ticket using the following plan: 
+
+```javascript
++!buyTicket(L):- argument(go_to(L),Arg) <- buyTicket(L)
+```
+
+However, imagine that the agent has checked the BRACIS web page and realised that the page limit for BRACIS papers is 6 pages and the agent has, unfortunatelly, submitted a longer paper than allowed, and longer paper are *strictly* not accepted:
+
+```javascript
+strict_inf(~accepted(P,C),[longer_for(P,C),submitted(P,C)]).
+strict_inf(longer_for(P,C),[paper_length(P,X),allowed_length(C,Y),X>Y]).
+paper_length(paper_45,9).
+allowed_length(bracis,6).
+```
+
+With this new information the agent is not able to construct an argument to `go_to(recife)`, thus it is not able to buy the ticket. 
+
+
