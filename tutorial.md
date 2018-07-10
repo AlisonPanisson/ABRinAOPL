@@ -26,6 +26,6 @@ The argumentation reasoning mechanism will interpret all beliefs and (usual) inf
 - Belief: `penguin(tweety).`
 - Usual inference rules in Jason: `father(P1,P2):- progenitor(P1,P2) & male(P1).`
 
-In addition, the argumentation-based reasoning mechanism is able to interpret strict and defeasible inferences represented as jason predicates as follows:
+In addition, the argumentation-based reasoning mechanism is able to interpret strict and defeasible inference rules represented using Jason predicates as follows:
 - Strict Inferences: `strict_inf(Head,Body)`, for example, `strict_inf(father(P1,P2),[progenitor(P1,P2),male(P1)])`
 - Defeasible Inferences: `defeasible_inf(Head,Body)`, for example, `defeasible_inf(flies(X),bird(X))`
