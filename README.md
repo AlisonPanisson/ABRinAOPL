@@ -2,7 +2,7 @@
 
 This project aims to develop an argumentation-based reasoning mechanism within an agent-oriented programming language called [Jason](http://jason.sf.net/).
 
-- A tutorial is available [here](../ABRinAOPL/tutorial.md)
+- A tutorial is available [here](https://github.com/AlisonPanisson/ABRinAOPL/blob/master/tutorial.md)
 
 Contact autors:
 
