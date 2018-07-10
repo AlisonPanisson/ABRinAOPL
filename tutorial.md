@@ -2,20 +2,30 @@
 
 This tutorial is based on Jason Eclipse Plugin. 
 
-## Installing Jason Eclipse Plugin
+## Installing JaCaMo Eclipse Plugin
 - [Install Eclipse IDE](https://www.eclipse.org/downloads/)
-- Install Jason plugin following the instruction in this [link](http://jason.sourceforge.net/mini-tutorial/eclipse-plugin/)
-- Create a new Jason Project 
+- Install JaCaMo plugin following the instruction in this [link](http://jacamo.sourceforge.net/eclipseplugin/tutorial/)
+- Create a new JaCaMo Project 
 
 
 ## Importing the Argumentation-Based Reasoning Mechanism
 
 - Download the argumentation-reasoning mechanism from [here](../ABRinAOPL/src/reasonig/arb.asl)
-- Upload that file to your Jason Project
+- Upload that file to your JaCaMo Project
 - Include the argumentation-based reasoning mechanism as part of your agents' code using the following command:
 > 
 ```javascript
 { include("reasoning/ABRinAOPL.asl") }
 ```
 
-- You are already able to implement agents using it
+- You are already able to implement arguemntation-based agents!
+
+## Knowledge representation
+
+The argumentation reasoning mechanism will interpret all beliefs and (usual) inference rules in Jason agents:
+- Belief: `penguin(tweety).`
+- Usual inference rules in Jason: `father(P1,P2):- progenitor(P1,P2) & male(P1).`
+
+In addition, the argumentation-based reasoning mechanism is able to interpret strict and defeasible inferences represented as jason predicates as follows:
+- Strict Inferences: `strict_inf(Head,Body)`, for example, `strict_inf(father(P1,P2),[progenitor(P1,P2),male(P1)])`
+- Defeasible Inferences: `defeasible_inf(Head,Body)`, for example, `defeasible_inf(flies(X),bird(X))`
