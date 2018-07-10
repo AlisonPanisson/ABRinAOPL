@@ -10,7 +10,7 @@ This tutorial is based on Jason Eclipse Plugin.
 
 ## Importing the Argumentation-Based Reasoning Mechanism
 
-- Download the argumentation-reasoning mechanism from [here](../ABRinAOPL/src/reasonig/arb.asl)
+- Download the argumentation-reasoning mechanism from [here](../ABRinAOPL/src/reasoning/arb.asl)
 - Upload that file to your JaCaMo Project
 - Include the argumentation-based reasoning mechanism as part of your agents' code using the following command:
 
@@ -36,7 +36,7 @@ Also, we are able to represent assumption in Jason agents using inference rules 
 
 ### The Tweety example
 
-One of the most famous example of defeasible reasoning is the so called Tweety example.
+One of the most famous examples of defeasible reasoning is the so-called Tweety Example.
 
 "Tweety is a penguin, penguins are birds, and birds fly, but penguins do not fly". 
 
@@ -48,9 +48,10 @@ defeasible_inf(~flies(A),penguin(A))
 strict_inf(bird(A),penguin(A))
 penguin(tweety)
 ```
-Now, imagine that an agent needs to decide between to leave a bird in a tree or in the ground, and that decision is based on the capability of such bird to fly:
+Now, imagine that an agent needs to decide between to leave a bird in a tree or in the ground, and that decision is based on the capability of such a bird to fly:
 
 ```javascript
 +!leave_bird(A): argument(flies(A)) <-leave_at_tree(A)
 +!leave_bird(A): argument(~flies(A)) <- leave_at_ground(A)
 ```
+In our example, the agent has only an acceptable argument to `~flies(tweety)`, thus, when making such decision, `tweety` is going to be leaved at the ground. 
