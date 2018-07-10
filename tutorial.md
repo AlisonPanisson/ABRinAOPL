@@ -86,4 +86,4 @@ allowed_length(bracis,6).
 
 With this new information the agent is not able to construct an argument to `go_to(recife)`, thus it is not able to buy the ticket. 
 
-> **Note:** Our paper has been accepted to BRACIS that year, and it is available [here](https://www.computer.org/csdl/proceedings/bracis/2016/3566/00/07839555.pdf)
+> **Note:** Our paper had the correct lenght and it has been accepted to BRACIS that year, and it is available [here](https://www.computer.org/csdl/proceedings/bracis/2016/3566/00/07839555.pdf)
