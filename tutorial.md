@@ -18,4 +18,4 @@ This tutorial is based on Jason Eclipse Plugin.
 { include("reasoning/ABRinAOPL.asl") }
 ```
 
-- You are already able to implement agent using it
+- You are already able to implement agents using it
