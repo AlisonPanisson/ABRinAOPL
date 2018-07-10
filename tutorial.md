@@ -72,7 +72,7 @@ held_in(bracis,recife).
 An agent is able to make a decision about buying a ticket to `recife` if it is able to construct an acceptable argument to go to `recife`. Considering the knowledge above, the agent does have an argument for that, and it can buy the ticket using the following plan: 
 
 ```javascript
-+!buyTicket(L):- argument(go_to(L),Arg) <- buyTicket(L)
++!buyTicket(L):- argument(go_to(L),Arg) <- buyTicket(L).
 ```
 
 However, imagine that the agent has checked the BRACIS web page and realised that the page limit for BRACIS papers is 6 pages and the agent has, unfortunatelly, submitted a longer paper than allowed, and longer paper are *strictly* not accepted:
