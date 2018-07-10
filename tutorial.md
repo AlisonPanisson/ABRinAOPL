@@ -31,4 +31,4 @@ In addition, the argumentation-based reasoning mechanism is able to interpret st
 - Defeasible Inferences: `defeasible_inf(Head,Body)`, for example, `defeasible_inf(flies(X),bird(X))`
 
 Also, we are able to represent assumption in Jason agents using inference rules that combine strong negation and negation-as-failure:
-- Assumptions: asm(good_person(Person)) :- not(~good_person(Person)), i.e., I can assume that a person is a good person if I am not able to infer (or believe) that person is not a good person.
+- Assumptions: `asm(good_person(Person)) :- not(~good_person(Person))`, i.e., I can assume that a person is a good person if I am not able to infer (or believe) that person is not a good person.
