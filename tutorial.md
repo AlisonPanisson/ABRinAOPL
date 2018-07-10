@@ -30,5 +30,5 @@ In addition, the argumentation-based reasoning mechanism is able to interpret st
 - Strict Inferences: `strict_inf(Head,Body)`, for example, `strict_inf(father(P1,P2),[progenitor(P1,P2),male(P1)])`
 - Defeasible Inferences: `defeasible_inf(Head,Body)`, for example, `defeasible_inf(flies(X),bird(X))`
 
-Also, we are able to represent assumption ins Jason agents using inference rules that combine strong negation and negation-as-failure:
+Also, we are able to represent assumption in Jason agents using inference rules that combine strong negation and negation-as-failure:
 - Assumption: asm(good_person(Person)) :- not(~good_person(Person))
