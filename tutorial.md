@@ -18,7 +18,7 @@ This tutorial is based on Jason Eclipse Plugin.
 { include("reasoning/ABRinAOPL.asl") }
 ```
 
-- You are already able to implement arguemntation-based agents!
+- You are already able to implement argumentation-based agents!
 
 ## Knowledge representation
 
@@ -29,3 +29,6 @@ The argumentation reasoning mechanism will interpret all beliefs and (usual) inf
 In addition, the argumentation-based reasoning mechanism is able to interpret strict and defeasible inference rules represented using Jason predicates as follows:
 - Strict Inferences: `strict_inf(Head,Body)`, for example, `strict_inf(father(P1,P2),[progenitor(P1,P2),male(P1)])`
 - Defeasible Inferences: `defeasible_inf(Head,Body)`, for example, `defeasible_inf(flies(X),bird(X))`
+
+Also, we are able to represent assumption ins Jason agents using inference rules that combine strong negation and negation-as-failure:
+- Assumption: asm(good_person(Person)) :- not(~good_person(Person))
