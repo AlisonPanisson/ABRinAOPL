@@ -1,0 +1,60 @@
+/*
+    abr_in_aopl
+    ---------------------------
+
+    JaCaMo Project File
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+
+    (see jacamo/doc/jcm.html for more information about what can be defined in this file)
+
+    JaCaMo <VERSION>
+    <DATE>
+*/
+
+mas abr_in_aopl {
+
+     agent ag1 : example.asl {
+	  	beliefs: defeasible_rule(p,[a,b])
+	  			 defeasible_rule(a,[c])
+	  			 defeasible_rule(b,[d,e])
+	  			 defeasible_rule(~a,[f])
+	  			 d
+	  			 e
+	  			 c
+	  			 
+  			 
+	  	goals: check_arg(p)
+	  }
+	  
+	  agent ag2 : example.asl {
+	  	beliefs: defeasible_rule(flies(A),bird(A))
+				 defeasible_rule(~flies(A),penguin(A))
+				 strict_rule(bird(A),penguin(A))
+				 penguin(tweety)
+	    goals: check_arg(~flies(tweety))
+
+	  }
+	  
+	  agent ag1 : example.asl {
+	  	beliefs: defeasible_rule(go_to(L),[held_in(C,L),accepted(P,C)])
+	  			 defeasible_rule(accepted(P,C),[submitted(P,C),good(P)])
+	  			 submitted(paper_45,bracis)
+	  			 good(paper_45)
+	  			 held_in(bracis,recife)
+	  				 
+	  			 /* Remove this knowledge below to make go_to(recife) acceptable */
+	  			 // strict_rule(~accepted(P,C),[longer_for(P,C),submitted(P,C)])
+	  			 // strict_rule(longer_for(P,C),[paper_length(P,X),allowed_length(C,Y),longer(X,Y)])
+	  			 // paper_length(paper_45,9)
+	  			 // allowed_length(bracis,6)
+	  				 
+	   goals: check_arg(go_to(recife))
+
+	  }
+	  
+
+
+   
+}
+
