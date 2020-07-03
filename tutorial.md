@@ -11,7 +11,7 @@ Also, you need to be familiar with [Jason](http://jason.sourceforge.net/wp/) age
 
 ## Importing the Argumentation-Based Reasoning Mechanism
 
-- Download the argumentation-based reasoning mechanism from [here](../ABRinAOPL/src/reasoning/arb.asl)
+- Download the argumentation-based reasoning mechanism from [here](../abr_in_aopl/src/asl/reasoning/ARBinAOPL.asl)
 - Upload that file to your JaCaMo Project
 - Include the argumentation-based reasoning mechanism as part of your agents' code using the following command:
 
